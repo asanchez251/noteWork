@@ -1,0 +1,30 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>Nuevo turno</h3>
+        </div>
+        <div class="card-body">
+            <form action="/turns/add" method="POST">
+                <div class="form-group">
+                    <label for="day">Día</label>
+                    <input type="date" name="day" id="day" class="form-control" autofocus required>
+                </div>
+                <div class="form-group">
+                    <label for="enter">Hora de entrada</label>
+                    <input type="time" name="enter" id="enter" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="out">Hora de salida</label>
+                    <input type="time" name="out" id="out" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="total">Nº de horas</label>
+                    <input type="number" name="total" id="total" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-block" type="submmit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

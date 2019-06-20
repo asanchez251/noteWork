@@ -1,0 +1,33 @@
+<div class="row">
+    {{#each notes}}
+        <div class="col-md-3 pb-2">
+            <div class="card" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">{{ title }}</h4>
+                    <p>{{ description }}</p>
+                <div class="btn-group btn-group-justified d-flex">
+                    <a href="/notes/edit/{{_id}}" class="btn btn-success">Editar</a>
+                    <a href="/notes/delete/{{_id}}" class="btn btn-secondary">Borrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <div class="col-md-3 pb-2">
+            <div class="card" style="max-width: 20rem;">
+                <div class="card-body">
+                    <form action="/notes/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Title" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="description" class="form-control" placeholder="Description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block" type="submmit">Nueva nota</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>

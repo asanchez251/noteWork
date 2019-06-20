@@ -1,0 +1,35 @@
+<div class="container">
+    {{#if turns}}
+    <h2>Saldo de horas: {{acumulated}}h</h2>
+    <table class="table text-center">
+        <thread class="thread-ligth">
+            <tr>
+                <th scope="col">Dia entrada</th>
+                <th scope="col">Entrada al curro</th>
+                <th scope="col">Salida</th>
+                <th scope="col">Total</th>
+                <th scope="col">Acumulado</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thread>
+        <tbody>
+            {{#each turns}}
+            <tr>
+                <th><input class="text-center" type="date" disabled value="{{ day }}"</th>
+                <th>{{ enter }}</th>
+                <th>{{ out }}</th>
+                <th>{{ total }}</th>
+                <th>{{ acumulated }}</th>
+                <th><a class="btn btn-danger" href="/turns/delete/{{_id}}">Delete</a></th>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <div class="card mb-3 mx-auto" style="max-width: 20rem;">
+        <div class="card-header">No tienes ningún turno</div>
+        <div class="card-body mx-auto">
+        <a href="/turns/add" class="card-text btn btn-success">Añade alguno</a>
+    </div>
+     {{/if}}
+</div>

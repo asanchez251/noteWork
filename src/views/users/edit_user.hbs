@@ -1,0 +1,20 @@
+<div class="row">
+    {{#if user}}
+        <div class="col-md-3 pb-2 mx-auto">
+            <div class="card" style="max-width: 20rem;">
+                <div class="card-body">
+                   <form action="/users/edit" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" class="form-control" value={{user.name}}>
+                </div>
+                <div class="form-group">
+                    <label for="journey">Jornada</label>
+                    <input type="number" name="journey" id="journey" class="form-control" value={{user.journey}}>
+                </div>
+                <div class="btn-group btn-group-justified d-flex">
+                    <button type="submit" class="btn btn-warning">Editar</button>
+                </div>
+            </form>
+    {{/if}}
+</div>
